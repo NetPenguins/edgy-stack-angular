@@ -1,19 +1,17 @@
-import {Injectable} from '@angular/core';
-import {BehaviorSubject} from "rxjs";
-import {StorageService} from "./local-storage.service";
-
+import { Component, OnInit } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { StorageService } from 'src/app/services/local-storage.service';
 
 export enum ThemeMode {
   DEFAULT, DARK, LIGHT
 }
 
-/**
- * @author Chad Wilson
- * @description UI style/theme toggle service
- * @module services/ui-style-toggle.service
- **/
-@Injectable()
-export class UiStyleToggleService {
+@Component({
+  selector: 'app-themetoggle',
+  templateUrl: './themetoggle.component.html',
+  styleUrls: ['./themetoggle.component.scss']
+})
+export class ThemetoggleComponent implements OnInit {
 
   public theme$ = new BehaviorSubject<ThemeMode>(ThemeMode.DEFAULT);
   private readonly THEME_KEY = 'THEME';
@@ -22,14 +20,9 @@ export class UiStyleToggleService {
   private readonly DARK_THEME_CLASS_NAME = 'theme-dark';
   private readonly LIGHT_THEME_CLASS_NAME = 'theme-light';
   private darkThemeSelected = false;
+  constructor(private storage: StorageService) { }
 
-  constructor(private storage: StorageService) {}
-
-  /*
-    If the browser supports matchMedia and the user hasnt specified a theme, 
-    we will use prefers-color-scheme to determine which theme to default to.
-  */
-  public setThemeOnStart() {
+  ngOnInit(): void {
     if(this.isThemeSet()) {
       if(this.isDarkThemeSelected()) {
         this.setDarkTheme();
@@ -52,6 +45,7 @@ export class UiStyleToggleService {
       document.body.classList.add('animate-colors-transition');
     }, 150);
   }
+
 
   public toggle() {
     if (this.darkThemeSelected) {
@@ -81,6 +75,7 @@ export class UiStyleToggleService {
     document.body.classList.add(this.LIGHT_THEME_CLASS_NAME);
     this.darkThemeSelected = false;
     this.theme$.next(ThemeMode.LIGHT);
+
   }
 
   private setDarkTheme() {
@@ -90,5 +85,4 @@ export class UiStyleToggleService {
     this.darkThemeSelected = true;
     this.theme$.next(ThemeMode.DARK);
   }
-
 }

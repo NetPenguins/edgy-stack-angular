@@ -5,7 +5,7 @@ $accent-color-dark: #0000FF;
 $toolbar-color: #EEEEEE;
 $toolbar-color-dark: #232323;
 $background-color: #eeeeee;
-$background-color-dark: #0a0a0a;
+$background-color-dark: #111216;
 $toolbar-text-color: $toolbar-color-dark;
 $toolbar-text-color-dark: $toolbar-color;
 
@@ -14,6 +14,10 @@ $card-background-dark: #494949;
 $card-border: #eee;
 $card-border-dark: #5c5c5c;
 
+$link-color: #1751f0de;
+$link-color-dark: #1eff00f8;
+$link-color-hover: #17a0f0de;
+$link-color-hover-dark: #1c9703;
 
 $colors: (
   --accent-color: ($accent-color, $accent-color-dark),
@@ -22,6 +26,8 @@ $colors: (
   --card-background: ($card-background, $card-background-dark),
   --card-border: ($card-border, $card-border-dark),
   --card-text-color: ($toolbar-text-color, $toolbar-text-color-dark),
-  --background-color: ($background-color, $background-color-dark)
+  --background-color: ($background-color, $background-color-dark),
+  --link-color: ($link-color, $link-color-dark),
+  --link-color-hover: ($link-color-hover, $link-color-hover-dark)
 )
 
