@@ -124,6 +124,9 @@
           }
         }
       }
-    }},
-  "defaultProject": "edgylabs-angular-starter-theme"
+    }
+  },
+  "cli": {
+    "analytics": false
+  }
 }
