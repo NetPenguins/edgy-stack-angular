@@ -9,7 +9,7 @@ import { Post } from 'src/app/models/post.model';
 })
 export class HeroHeaderComponent implements OnInit {
 
-  @Input() post: Post;
+  @Input() post;
 
   constructor() { }
 

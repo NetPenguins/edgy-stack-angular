@@ -1,7 +1,7 @@
-<div class="hero-header">
-    <h1 *ngIf="post && post.title; else spinner">{{post.title.rendered}}</h1>
+<div *ngIf="post && post.title; else spinner" class="hero-header">
+    <h1 >{{post.title}}</h1>
     <app-hero-subtitle [post]="post"></app-hero-subtitle>
-    <ng-template #spinner>
-        <app-spinner></app-spinner>
-    </ng-template>
 </div>
+<ng-template #spinner>
+    <app-spinner></app-spinner>
+</ng-template>

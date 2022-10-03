@@ -1,6 +1,7 @@
-{{post.yoast_head_json.twitter_misc['Written by']}}, 
+
+{{post?.author.node.name}}, 
 <span>
-    {{post.date | date:'longDate'}} &#8226; 
-    {{post.yoast_head_json.twitter_misc['Est. reading time']}} 
+    {{post?.date | date:'longDate'}} &#8226; 
+    {{post?.seo.readingTime}} 
     read
 </span>
