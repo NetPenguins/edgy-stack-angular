@@ -9,6 +9,25 @@ html{
     height: 100%;
 }
 
+p, h1, h2, h3, h4, h5 {
+    line-height: 1.756;
+    color: var(--theme-ui-colors-articleText,#fff);
+    font-family: var(--system-font);
+    -webkit-transition: background 0.25s var(--ease-in-out-quad),color 0.25s var(--ease-in-out-quad);
+    transition: background 0.25s var(--ease-in-out-quad),color 0.25s var(--ease-in-out-quad);
+    margin: 0 auto 35px;
+    width: 100%;
+    max-width: 680px;
+}
+
+h2 {
+    word-break: keep-all;
+    font-size: 32px;
+    line-height: 1.333;
+    font-weight: 700;
+    margin-top: 2rem;
+    font-family: system-ui;
+}
 //Custom PRISM theme
 /**
  * MIT License
@@ -17,6 +36,13 @@ html{
  * Ported by Sara vieria [@SaraVieira]
  * Added by Souvik Mandal [@SimpleIndian]
  */
+ .code-toolbar {
+    position: relative;
+    padding: 2rem 0;
+    width: 100%;
+    max-width: 725px;
+    margin: 0 auto;
+ }
 
  code[class*="language-"],
  pre[class*="language-"] {
@@ -75,6 +101,7 @@ html{
      color: white;
     //  background: #263238;
     background: rgb(41, 44, 52);
+    ;
  }
  
  :not(pre) > code[class*="language-"] {

@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {APP_INITIALIZER, NgModule} from '@angular/core';
+import {APP_INITIALIZER, CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {UiStyleToggleService} from "./services/ui-style-toggle.service";
@@ -29,8 +29,6 @@ export function themeFactory(themeService: UiStyleToggleService) {
     AppComponent,
     FooterComponent,
     NavbarComponent,
-<<<<<<< Updated upstream
-=======
     SpinnerComponent,
     PostComponent,
     PostsComponent,
@@ -39,7 +37,6 @@ export function themeFactory(themeService: UiStyleToggleService) {
     HeroSubtitleComponent,
     AuthorLinkComponent,
     HeroAsideComponent,
->>>>>>> Stashed changes
   ],
   imports: [
     BrowserModule,
@@ -54,6 +51,8 @@ export function themeFactory(themeService: UiStyleToggleService) {
     HighlightService,
     {provide: APP_INITIALIZER, useFactory: themeFactory, deps: [UiStyleToggleService], multi: true},
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  exports: [HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule {

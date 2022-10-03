@@ -45,6 +45,7 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
+              "aot": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -61,6 +62,16 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "dev": {
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
             }
           }
         },
@@ -72,6 +83,9 @@
           "configurations": {
             "production": {
               "browserTarget": "edgylabs-angular-starter-theme:build:production"
+            },
+            "dev": {
+              "browserTarget": "edgylabs-angular-starter-theme:build:dev"
             }
           }
         },
