@@ -36,6 +36,10 @@ export function GET_POST (slug: string) {
               author {
                 node {
                     name
+                    slug
+                    avatar {
+                      url
+                    }
                 }
               }
               date

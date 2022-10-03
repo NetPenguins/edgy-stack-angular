@@ -1,7 +1,7 @@
-
-{{post?.author.node.name}}, 
+<!-- {{post?.author.node.name}},   -->
+<app-author-link [post]="post"></app-author-link>
 <span>
     {{post?.date | date:'longDate'}} &#8226; 
-    {{post?.seo.readingTime}} 
+    {{post?.seo?.readingTime}} 
     read
 </span>
