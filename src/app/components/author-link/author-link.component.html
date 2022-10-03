@@ -1,6 +1,6 @@
-<a href="" class="author-link">
+<a href="/author/{{post?.author?.node?.slug}}" class="author-link">
     <div class="author-avatar">
-        <img src="post." alt="" class="rounded-img">
+        <img src={{post?.author?.node?.avatar?.url}} alt={{post?.author?.node?.name}} class="rounded-img">
     </div>
-    <strong></strong>
+    <strong>{{post?.author?.node?.name}}</strong>
 </a>

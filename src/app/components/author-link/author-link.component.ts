@@ -8,10 +8,11 @@ import { Post } from 'src/app/models/post.model';
 })
 export class AuthorLinkComponent implements OnInit {
 
-  @Input() post: Post;
+  @Input() post;
   constructor() { }
 
   ngOnInit(): void {
+    console.debug(this.post)
   }
 
 }
