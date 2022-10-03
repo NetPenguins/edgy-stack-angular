@@ -5,3 +5,12 @@
     padding-left: 68px;
     max-width: 749px;
 }
+
+.hero-header > h1 {
+    word-break: break-word;
+    font-size: 52px;
+    line-height: 1.15;
+    font-weight: var(700);
+    font-family: Merriweather;
+    margin-bottom: 25px;
+}

@@ -9,7 +9,7 @@ html{
     height: 100%;
 }
 
-p, h1, h2, h3, h4, h5 {
+p, h2, h3, h4, h5 {
     line-height: 1.756;
     color: var(--theme-ui-colors-articleText,#fff);
     font-family: var(--system-font);
@@ -26,7 +26,7 @@ h2 {
     line-height: 1.333;
     font-weight: 700;
     margin-top: 2rem;
-    font-family: system-ui;
+    font-family: Merriweather;
 }
 //Custom PRISM theme
 /**
