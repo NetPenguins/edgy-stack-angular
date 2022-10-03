@@ -1,0 +1,59 @@
+.container {
+    float: left;
+    position: fixed;
+    // vertical-align: middle;
+    z-index: 999;
+    top: 0;
+    // display: flex;
+    transform: translateX(-30px);
+    // margin: 0 auto;
+}
+
+.align {
+    position: "absolute";
+    display: flex;
+    transform: translateY(0px);
+    // top: ${p => (p.shouldFixAside ? 0 : p.imageOffset)}px;
+    // align-items: ${p => (p.shouldFixAside ? "center" : "flex-start")};
+    height: 100vh;
+    align-items: center;
+    z-index: 3;
+
+    // opacity: ${p => (p.show ? 1 : 0)};
+    // visibility: ${p => (p.show ? "visible" : "hidden")};
+    // transition: ${p =>
+    //     p.show
+    //     ? "opacity 0.4s linear, visibility 0.4s linear"
+    //     : "opacity 0.2s linear, visibility 0.4s linear"};
+}
+
+.progress-container {
+    position: relative;
+    outline: none;
+    border-radius: 2px;
+    background-color: rgba(128, 128, 128, 0.644);
+    user-select: none;   
+}
+
+.track-line {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: calc(88vh - 40px);
+    max-height: 425px;
+    width: 8px;
+
+    // background-color: ${p => p.theme.colors.track};
+    opacity: 0.6;
+    overflow: hidden;
+}
+
+.progress-line {
+    position: absolute;
+    height: 100%;
+    top: -100%;
+    width: 8px;
+    background-color: rgb(0, 250, 0);
+    // background-color: ${p => p.theme.colors.progress};
+    left: 0;    
+}
