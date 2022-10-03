@@ -10,7 +10,7 @@ import { Post } from '../models/post.model';
  */
 @Injectable()
 export class PostsService {
-  post: Post;;
+  post: Post;
   
   constructor(private http: HttpClient) {}
 
@@ -91,4 +91,6 @@ export class PostsService {
     console.log("loadPosts()");
     return this.http.get<Post[]>(url);
   }
+
+  
 }

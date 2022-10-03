@@ -24,6 +24,9 @@ export class Post {
     featured_image: string;
     author: string;
     comments: any[];
+    seo: {
+        reading_time: string
+    }
     yoast_head_json: {
         twitter_misc: {
             'Est. reading time': string;

@@ -8,8 +8,9 @@
     <img
         class="img-responsive rounded"
         width="200"
-        src="{{ post.jetpack_featured_media_url }}"
+        src="{{ image }}"
         alt=""
     />
-    <div [innerHtml]="post.content.rendered" *ngIf="post && post.content"></div>
+    <app-hero-aside></app-hero-aside>
+    <div [innerHtml]="post.content" *ngIf="post && post.content"></div>
 </div>

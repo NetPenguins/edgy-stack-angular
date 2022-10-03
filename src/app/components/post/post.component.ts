@@ -1,8 +1,10 @@
-import { AfterViewChecked, AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewChecked, AfterViewInit, Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Post } from 'src/app/models/post.model';
 import { HighlightService } from 'src/app/services/highlight.service';
 import { PostsService } from 'src/app/services/posts.service';
+import { Apollo } from 'apollo-angular';
+import { GET_POST } from 'src/app/services/queries';
 
 @Component({
   selector: 'app-post',
@@ -20,30 +22,37 @@ import { PostsService } from 'src/app/services/posts.service';
  */
 export class PostComponent implements OnInit, AfterViewChecked {
 
+  post: any;
   slug: string;
-  post: Post;
   content: string;
+  image: string;
   highlighted: boolean = false;
+  querySubscription: any;
   constructor(
-    private postsService: PostsService, 
     private highlightService: HighlightService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private apollo: Apollo
   ) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.slug = params['slug'];
     });
-    this.postsService.getPost(this.slug).subscribe(
-      (response: Post) => {
-        console.log(response.content.rendered);
-        this.post = response;
-      }
-    );
+    
+    this.querySubscription = this.apollo.query<any>({
+      query: GET_POST(this.slug)
+    })
+      .subscribe(({ data, loading }) => {
+        // this.loading = loading;
+        this.post = data.post;
+        this.image = this.post?.featuredImage?.node?.srcSet?.split(",")[0].split(" ")[0]
+      });
+      
+
   }
 
   ngAfterViewChecked(): void {
-    if (!this.highlighted) {
+    if (this.post && !this.highlighted) {
       this.highlightService.highlightAll();
       this.highlighted = true;
     }

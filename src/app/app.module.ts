@@ -17,6 +17,8 @@ import { ThemetoggleComponent } from './components/themetoggle/themetoggle.compo
 import { HeroHeaderComponent } from './components/hero-header/hero-header.component';
 import { HeroSubtitleComponent } from './components/hero-subtitle/hero-subtitle.component';
 import { AuthorLinkComponent } from './components/author-link/author-link.component';
+import { GraphQLModule } from './graphql.module';
+import { HeroAsideComponent } from './components/hero-aside/hero-aside.component';
 
 export function themeFactory(themeService: UiStyleToggleService) {
   return () => themeService.setThemeOnStart();
@@ -27,6 +29,8 @@ export function themeFactory(themeService: UiStyleToggleService) {
     AppComponent,
     FooterComponent,
     NavbarComponent,
+<<<<<<< Updated upstream
+=======
     SpinnerComponent,
     PostComponent,
     PostsComponent,
@@ -34,12 +38,14 @@ export function themeFactory(themeService: UiStyleToggleService) {
     HeroHeaderComponent,
     HeroSubtitleComponent,
     AuthorLinkComponent,
+    HeroAsideComponent,
+>>>>>>> Stashed changes
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
     CookieModule.forRoot(),
+    GraphQLModule,
   ],
   providers: [
     UiStyleToggleService,

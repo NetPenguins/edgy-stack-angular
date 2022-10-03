@@ -7,6 +7,7 @@
         font-size: 1.5rem;
         // overflow: visible;
     }
+<<<<<<< Updated upstream
     
     .post-title {
         // //center all elements in the header
@@ -38,10 +39,18 @@
     div.main-content ::ng-deep pre {
         border-radius: 8px;
     }
+=======
+
+    div.main-content ::ng-deep pre {
+        border-radius: 8px;
+    }
+
+>>>>>>> Stashed changes
     ::ng-deep a {
         color: var(--link-color);
         text-decoration: none;
     }
+<<<<<<< Updated upstream
     .img-responsive.rounded{
         border-radius: 5px;
         //center image
@@ -49,6 +58,36 @@
         display: block;
         //width: 100%;
         //height: auto;
+=======
+
+    .img-responsive.rounded{
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: auto;
+        max-width: 944px;
+        overflow: hidden;
+        border-radius: 5px;
+        margin: 0 auto;
+        box-shadow: 0 30px 60px -10px rgba(0, 0, 0, 0.2),
+            0 18px 36px -18px rgba(0, 0, 0, 0.22);
+
+        @media (min-width: 735px) {
+            max-width: 100%;
+        }
+
+        @media (min-width: 540px) {
+            margin: 0 auto;
+            // width: calc(100vw - 40px);
+            &.no-hero {
+            display: none;
+            }
+
+            & > div {
+            height: 220px;
+            }
+        }
+>>>>>>> Stashed changes
 
     }
     ::ng-deep a:hover {
