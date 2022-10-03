@@ -1,24 +1,18 @@
 .container {
     float: left;
     position: fixed;
-    // vertical-align: middle;
     z-index: 999;
     top: 0;
-    // display: flex;
     transform: translateX(-30px);
-    // margin: 0 auto;
 }
 
 .align {
     position: "absolute";
     display: flex;
     transform: translateY(0px);
-    // top: ${p => (p.shouldFixAside ? 0 : p.imageOffset)}px;
-    // align-items: ${p => (p.shouldFixAside ? "center" : "flex-start")};
     height: 100vh;
     align-items: center;
     z-index: 3;
-
     // opacity: ${p => (p.show ? 1 : 0)};
     // visibility: ${p => (p.show ? "visible" : "hidden")};
     // transition: ${p =>
@@ -42,8 +36,6 @@
     height: calc(88vh - 40px);
     max-height: 425px;
     width: 8px;
-
-    // background-color: ${p => p.theme.colors.track};
     opacity: 0.6;
     overflow: hidden;
 }
@@ -54,6 +46,5 @@
     top: -100%;
     width: 8px;
     background-color: rgb(0, 250, 0);
-    // background-color: ${p => p.theme.colors.progress};
     left: 0;    
 }

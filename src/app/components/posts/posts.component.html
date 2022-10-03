@@ -6,11 +6,11 @@
                 <div class="card-body">
                     <img
                         class="card-img-top"
-                        src="{{ post.jetpack_featured_media_url }}"
+                        src="{{ post?.featuredImage?.node?.link }}"
                         alt=""
                     />
-                    <h2 class="card-title">{{post.title.rendered}}</h2>
-                    <h3 class="info"><span>{{post.date | date:'longDate'}} &#8226; {{post.yoast_head_json.twitter_misc['Est. reading time']}} read</span></h3>
+                    <h2 class="card-title">{{post?.title}}</h2>
+                    <h3 class="info"><span>{{post.date | date:'longDate'}} &#8226; {{post.seo.readingTime}} read</span></h3>
                 </div>
             </div>
         </a>

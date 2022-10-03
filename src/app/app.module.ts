@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {APP_INITIALIZER, NgModule} from '@angular/core';
+import {APP_INITIALIZER, CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {UiStyleToggleService} from "./services/ui-style-toggle.service";
@@ -17,6 +17,8 @@ import { ThemetoggleComponent } from './components/themetoggle/themetoggle.compo
 import { HeroHeaderComponent } from './components/hero-header/hero-header.component';
 import { HeroSubtitleComponent } from './components/hero-subtitle/hero-subtitle.component';
 import { AuthorLinkComponent } from './components/author-link/author-link.component';
+import { GraphQLModule } from './graphql.module';
+import { HeroAsideComponent } from './components/hero-aside/hero-aside.component';
 
 export function themeFactory(themeService: UiStyleToggleService) {
   return () => themeService.setThemeOnStart();
@@ -34,12 +36,13 @@ export function themeFactory(themeService: UiStyleToggleService) {
     HeroHeaderComponent,
     HeroSubtitleComponent,
     AuthorLinkComponent,
+    HeroAsideComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
     CookieModule.forRoot(),
+    GraphQLModule,
   ],
   providers: [
     UiStyleToggleService,
@@ -48,6 +51,8 @@ export function themeFactory(themeService: UiStyleToggleService) {
     HighlightService,
     {provide: APP_INITIALIZER, useFactory: themeFactory, deps: [UiStyleToggleService], multi: true},
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  exports: [HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule {

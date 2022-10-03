@@ -8,8 +8,8 @@
   </a>
     <div class="spacer"></div>
    <!-- TODO: Add custom toggle here or move this around. -->
-   <app-themetoggle></app-themetoggle>
-    <!-- <a class="dark-mode" title="Dark theme" (click)="toggleTheme()">
+   <!-- <app-themetoggle></app-themetoggle> -->
+    <a class="dark-mode" title="Dark theme" (click)="toggleTheme()">
       <div *ngIf="darkmode; then dark else light"></div>
       <ng-template #light>
         <svg
@@ -43,5 +43,5 @@
           />
         </svg>
       </ng-template>
-    </a> -->
+    </a>
   </div>
