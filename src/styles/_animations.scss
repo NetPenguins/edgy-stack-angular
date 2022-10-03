@@ -1,4 +1,67 @@
 //TODO: Edit theme change transitions here
-.animate-colors-transition * {
-  transition: color 250ms, background 500ms;
+.animate-colors-transition  {
+  // position: relative; 
+  // transform: scale(0);
+  // left: 0; 
+  // right: 0;
+  // top: 0;
+  // bottom: 0;
+  // width: 100%;
+  // height: 100%;
+  // border-radius: 50%;
+  // transition: 1000ms ease-in-out;
+  // display: flex;
+  // flex: 0 0 auto;
+  &.theme-light{
+    transition: 500ms ease-in-out;
+    color: red;
+  }
+  &.theme-dark{
+    animation:backwards 500ms ease-in-out;
+    transition: 500ms ease-in;
+  }
+  //transition: color 50ms, background 100ms;
+}
+
+//Spinner
+.spinner-ring {
+  display: inline-block;
+  position: fixed;
+  width: 80px;
+  height: 80px;
+  //center the spinner on the main window
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);    
+  z-index: -1;
+}
+.spinner-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: spinner-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: rgb(30, 255, 0) transparent transparent transparent;
+}
+.spinner-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.spinner-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.spinner-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes spinner-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

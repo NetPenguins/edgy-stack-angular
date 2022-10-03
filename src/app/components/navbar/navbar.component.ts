@@ -1,6 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { UiStyleToggleService } from 'src/app/services/ui-style-toggle.service';
 
+/**
+ * Navbar component.
+ * @class
+ * @implements {OnInit}
+ * @author Chad Wilson
+ * @var {string} title - The title of the app.
+ */
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',

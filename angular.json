@@ -30,7 +30,9 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/prismjs/prism.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -122,6 +124,9 @@
           }
         }
       }
-    }},
-  "defaultProject": "edgylabs-angular-starter-theme"
+    }
+  },
+  "cli": {
+    "analytics": false
+  }
 }

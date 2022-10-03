@@ -7,6 +7,16 @@ import {StorageService} from "./services/local-storage.service";
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CookieModule } from 'ngx-cookie';
+import { PostsService } from './services/posts.service';
+import { HttpClientModule } from '@angular/common/http';
+import { SpinnerComponent } from './components/spinner/spinner.component';
+import { PostComponent } from './components/post/post.component';
+import { HighlightService } from './services/highlight.service';
+import { PostsComponent } from './components/posts/posts.component';
+import { ThemetoggleComponent } from './components/themetoggle/themetoggle.component';
+import { HeroHeaderComponent } from './components/hero-header/hero-header.component';
+import { HeroSubtitleComponent } from './components/hero-subtitle/hero-subtitle.component';
+import { AuthorLinkComponent } from './components/author-link/author-link.component';
 
 export function themeFactory(themeService: UiStyleToggleService) {
   return () => themeService.setThemeOnStart();
@@ -17,15 +27,25 @@ export function themeFactory(themeService: UiStyleToggleService) {
     AppComponent,
     FooterComponent,
     NavbarComponent,
+    SpinnerComponent,
+    PostComponent,
+    PostsComponent,
+    ThemetoggleComponent,
+    HeroHeaderComponent,
+    HeroSubtitleComponent,
+    AuthorLinkComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     CookieModule.forRoot(),
   ],
   providers: [
     UiStyleToggleService,
     StorageService,
+    PostsService,
+    HighlightService,
     {provide: APP_INITIALIZER, useFactory: themeFactory, deps: [UiStyleToggleService], multi: true},
   ],
   bootstrap: [AppComponent]

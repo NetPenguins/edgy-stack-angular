@@ -1,0 +1,68 @@
+// Create card styles
+.card {
+    display: flex;
+    border-radius: 4px;
+    color: var(--card-text-color);
+    padding: 1em;
+    margin: 1em;
+}
+
+//Card on over
+.card:hover {
+    color: beige;
+}
+
+//Create set size card-img-top
+.card-img-top {
+    border-radius: 4px;
+    max-height: 200px;
+    width: 100%;
+    image-rendering: optimizeQuality;
+    vertical-align: middle;
+    align-self: center;
+    object-fit: cover;
+}
+//Create card text
+.card-text {
+    color: var(--card-text-color);
+}
+// Create card body
+.card-body {
+    padding: 1em;
+}
+// Create card Text
+.card-text {
+    color: var(--card-text-color);
+}
+
+//Create card grid with flex layout
+// .card-grid {
+//     display: flex;
+//     flex-wrap: wrap;
+//     justify-content: space-between;
+//     margin: 1em -1em;
+// }
+.card-grid {
+    width: 100%;
+    max-width: 1220px;
+    margin: 0 auto;
+    padding-top: 3rem;
+    position: relative;
+    display: grid;
+    grid-column-gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+//Create card grid item
+.card-grid-item {
+    // flex: 1;
+    padding: 1em;
+    flex-grow: 1;
+}
+
+.info {
+    color: rgba(128, 128, 128, 0.767);
+}
+
+a {
+    text-decoration: none;
+}

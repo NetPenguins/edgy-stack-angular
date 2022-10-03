@@ -1,0 +1,15 @@
+<div class="main-content">
+    <app-hero-header *ngIf="post" [post]="post"></app-hero-header>
+    <!-- <h1 class="post-title" *ngIf="post && post.title; else spinner">{{post.title.rendered}}</h1> -->
+    <!-- <app-post-info [post]="post"></app-post-info> -->
+    <!-- <div class="info">
+        <h3>{{post.yoast_head_json.twitter_misc['Written by']}}, <span>{{post.date | date:'longDate'}} &#8226; {{post.yoast_head_json.twitter_misc['Est. reading time']}} read</span></h3>
+    </div> -->
+    <img
+        class="img-responsive rounded"
+        width="200"
+        src="{{ post.jetpack_featured_media_url }}"
+        alt=""
+    />
+    <div [innerHtml]="post.content.rendered" *ngIf="post && post.content"></div>
+</div>
