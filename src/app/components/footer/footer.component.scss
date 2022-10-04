@@ -1,8 +1,12 @@
+// @import "styles/colors";
 :host{
-  height: 40px;
+  height: 20rem;
   display: flex;
   width: 100%;
+  bottom: 0;
+  position: absolute;
   margin-top: auto;
+  background: var(--footer-color);
   justify-content: center;
 }
 //Stick footer to bottom

@@ -10,15 +10,16 @@ import { CookieModule } from 'ngx-cookie';
 import { PostsService } from './services/posts.service';
 import { HttpClientModule } from '@angular/common/http';
 import { SpinnerComponent } from './components/spinner/spinner.component';
-import { PostComponent } from './components/post/post.component';
+import { PostComponent } from './pages/post/post.component';
 import { HighlightService } from './services/highlight.service';
-import { PostsComponent } from './components/posts/posts.component';
+import { PostsComponent } from './pages/posts/posts.component';
 import { ThemetoggleComponent } from './components/themetoggle/themetoggle.component';
 import { HeroHeaderComponent } from './components/hero-header/hero-header.component';
 import { HeroSubtitleComponent } from './components/hero-subtitle/hero-subtitle.component';
 import { AuthorLinkComponent } from './components/author-link/author-link.component';
 import { GraphQLModule } from './graphql.module';
 import { HeroAsideComponent } from './components/hero-aside/hero-aside.component';
+import { AuthorComponent } from './pages/author/author.component';
 
 export function themeFactory(themeService: UiStyleToggleService) {
   return () => themeService.setThemeOnStart();
@@ -37,6 +38,7 @@ export function themeFactory(themeService: UiStyleToggleService) {
     HeroSubtitleComponent,
     AuthorLinkComponent,
     HeroAsideComponent,
+    AuthorComponent,
   ],
   imports: [
     BrowserModule,

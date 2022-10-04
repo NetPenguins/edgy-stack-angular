@@ -1,23 +1,35 @@
 @import "styles/colors";
 @import "styles/animations";
 @import "styles/theme";
-
+@import "styles/variables";
 @import "~prismjs/plugins/toolbar/prism-toolbar.css";
 
 html{
     background-color: var(--accent-color);
-    height: 100%;
+    min-height: 100vh;
 }
 
-p, h2, h3, h4, h5, cite, ul, blockquote {
+body {
+    min-height: 100vh;
+    position: relative;
+}
+
+p, h2, h3, h4, h5, cite, ul, blockquote, .wp-block-code {
     line-height: 1.756;
-    color: var(--theme-ui-colors-articleText,#fff);
+    color: var(--theme-ui-colors-articleText,rgb(23, 23, 23));
     font-family: var(--system-font);
     -webkit-transition: background 0.25s var(--ease-in-out-quad),color 0.25s var(--ease-in-out-quad);
     transition: background 0.25s var(--ease-in-out-quad),color 0.25s var(--ease-in-out-quad);
     margin: 0 auto 35px;
     width: 100%;
-    max-width: 680px;
+    // max-width: 680px;
+    @media only screen and (max-width: $tablet) {
+        max-width: 85%;
+    }
+    @media only screen and (min-width: $tablet) {
+        max-width: 680px;
+    }
+    
 }
 
 h2 {
@@ -196,3 +208,187 @@ h2 {
  .token.italic {
      font-style: italic;
  }
+
+
+ div.wp-block-jetpack-gif-wrapper {
+    padding-top: 0 !important;
+  } 
+ 
+  div.wp-block-jetpack-gif-wrapper iframe{
+    height: 30rem;
+  }
+ /**
+    * Thanks to Benjamin De Cock
+    * https://gist.github.com/bendc/ac03faac0bf2aee25b49e5fd260a727d
+    */
+   :root {
+     --ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+     --ease-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+     --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+     --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+     --ease-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+     --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
+   }
+ 
+//    @font-face {
+//      font-family: var(--system-font);
+//      font-weight: var(--system-font-normal);
+//      font-style: normal;
+//    }
+ 
+   *,
+   *:before,
+   *:after {
+     box-sizing: inherit;
+     margin: 0;
+     padding: 0;
+     font-size: inherit;
+     font-display: block;
+   }
+ 
+   :root {
+     -ms-overflow-style: -ms-autohiding-scrollbar;
+     box-sizing: border-box;
+     -webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale;
+     text-rendering: optimizeLegibility;
+     cursor: default;
+     font-size: 0.625rem;
+     line-height: 1.4;
+   }
+ 
+   body {
+     font-family: var(--system-font);
+     font-size: 1.6rem;
+     margin: 0;
+     font-weight: var(--system-font-normal);
+     height: 100%;
+   }
+ 
+   article {
+     word-break: break-word;
+   }
+ 
+   button,
+   a {
+     text-decoration: none;
+     cursor: pointer;
+   }
+ 
+   a:focus {
+     outline: none;
+   }
+ 
+   audio,
+   canvas,
+   iframe,
+   img,
+   svg,
+   video {
+     vertical-align: middle;
+     align-self: center;
+   }
+ 
+   input,
+   textarea,
+   select,
+   button {
+     font-family: var(--monospace-font);
+     font-weight: var(--monospace-font-normal);
+   }
+ 
+   .underline {
+     text-decoration: underline;
+   }
+ 
+   button,
+   input,
+   select,
+   textarea {
+     color: inherit;
+     font-family: inherit;
+     font-style: inherit;
+     font-weight: inherit;
+   }
+ 
+   code,
+   kbd,
+   pre,
+   samp {
+     font-family: monospace;
+   }
+ 
+    em > code {
+        overflow-wrap: anywhere;
+    }
+
+   .wp-block-code {
+        background-color: var(--highlight-color);
+        padding-left: 10px;
+    }
+
+    p > code {
+        background-color: var(--highlight-color);
+        padding: 4px;
+        white-space: pre-wrap;
+        border-radius: 4px;
+    }
+    
+   fieldset,
+   button {
+     appearance: none;
+     border: none;
+     outline: none;
+     background: transparent;
+   }
+ 
+   table {
+     border-collapse: separate;
+     border-spacing: 0;
+   }
+ 
+   audio:not([controls]) {
+     display: none;
+   }
+ 
+   details {
+     display: block;
+   }
+ 
+   input {
+     &:focus,
+     &:active {
+       outline: none;
+     }
+ 
+     &[type="number"] {
+       width: auto;
+     }
+   }
+ 
+   .wp-block-image {
+        width: 90%;
+        margin: 0 auto;
+        max-width: 800px;
+    }
+
+    .wp-block-preformatted.screen {
+        max-width: 685px;
+        margin: 0 auto;
+        white-space: pre-wrap;
+        padding-bottom: 2rem;
+    }
+
+    .wp-block-quote.is-style-default {
+        font-style: italic;
+        background-color: var(--quote-color);
+        padding: 5rem;
+    }
+
+    .wp-block-embed.is-type-rich.is-provider-twitter.wp-block-embed-twitter {
+        max-width: 680px;
+        margin: 0 auto;
+    }
+   img.Image__Zoom ~ div {
+     background: transparent !important;
+   }

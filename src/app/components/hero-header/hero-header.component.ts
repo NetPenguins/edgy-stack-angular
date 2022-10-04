@@ -9,10 +9,10 @@ export class HeroHeaderComponent implements OnInit {
 
   @Input() post;
 
-  constructor() { }
+  constructor() {
+   }
 
   ngOnInit(): void {
-    console.log(this.post)
   }
 
 }

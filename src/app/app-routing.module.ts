@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PostComponent } from './components/post/post.component';
-import { PostsComponent } from './components/posts/posts.component';
+import { AuthorComponent } from './pages/author/author.component';
+import { PostComponent } from './pages/post/post.component';
+import { PostsComponent } from './pages/posts/posts.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: 'posts/:slug',
     component: PostComponent
+  },
+  {
+    path: 'author/:slug',
+    component: AuthorComponent
   }
 ];
 

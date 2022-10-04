@@ -1,10 +1,9 @@
 import { AfterViewChecked, AfterViewInit, Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Post } from 'src/app/models/post.model';
 import { HighlightService } from 'src/app/services/highlight.service';
-import { PostsService } from 'src/app/services/posts.service';
 import { Apollo } from 'apollo-angular';
 import { GET_POST } from 'src/app/services/queries';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-post',
@@ -28,6 +27,8 @@ export class PostComponent implements OnInit, AfterViewChecked {
   image: string;
   highlighted: boolean = false;
   querySubscription: any;
+  loading: boolean;
+  // $post: BehaviorSubject<any> = new BehaviorSubject<any>(null);
   constructor(
     private highlightService: HighlightService,
     private route: ActivatedRoute,
@@ -38,17 +39,26 @@ export class PostComponent implements OnInit, AfterViewChecked {
     this.route.params.subscribe(params => {
       this.slug = params['slug'];
     });
-    
+    this.loading = true;
     this.querySubscription = this.apollo.query<any>({
       query: GET_POST(this.slug)
     })
-      .subscribe(({ data, loading }) => {
-        // this.loading = loading;
+      .subscribe(
+        ({ data, loading }) => {
+        console.log(loading)
+        this.loading = loading;
         this.post = data.post;
+        // this.$post.next(data.post);
         this.image = this.post?.featuredImage?.node?.srcSet?.split(",")[0].split(" ")[0]
+      },
+      (error: Error) => {
+        console.error(error)
+        this.loading = false;
+      },
+      () => {
+        console.debug('Completed GET_POST')
+        this.loading = false;
       });
-      
-
   }
 
   ngAfterViewChecked(): void {
