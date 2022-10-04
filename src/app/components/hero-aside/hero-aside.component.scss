@@ -1,24 +1,24 @@
+@import "/src/styles/variables";
+
 .container {
     float: left;
     position: fixed;
     z-index: 999;
+    left: 2rem;
     top: 0;
-    transform: translateX(-30px);
+    // transform: translateX(-30px);
 }
 
 .align {
-    position: "absolute";
+    @media only screen and (max-width: $phone_landscape) {
+        visibility: hidden !important;
+    }
+    position: fixed;
     display: flex;
     transform: translateY(0px);
     height: 100vh;
     align-items: center;
     z-index: 3;
-    // opacity: ${p => (p.show ? 1 : 0)};
-    // visibility: ${p => (p.show ? "visible" : "hidden")};
-    // transition: ${p =>
-    //     p.show
-    //     ? "opacity 0.4s linear, visibility 0.4s linear"
-    //     : "opacity 0.2s linear, visibility 0.4s linear"};
 }
 
 .progress-container {

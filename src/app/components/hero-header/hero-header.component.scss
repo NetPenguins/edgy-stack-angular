@@ -1,9 +1,14 @@
+@import "/src/styles/variables";
+
 .hero-header {
     position: relative;
     z-index: 10;
-    margin: 100px auto 120px;
-    padding-left: 68px;
+    margin: 100px auto;
     max-width: 749px;
+    padding-left: 10%;
+    @media only screen and (min-width: $tablet) {
+        padding-left: 42px;
+    }
 }
 
 .hero-header > h1 {
@@ -13,4 +18,7 @@
     font-weight: var(700);
     font-family: Merriweather;
     margin-bottom: 25px;
+    @media only screen and (max-width: $tablet) {
+        font-size: 40px;
+    }
 }

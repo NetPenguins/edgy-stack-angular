@@ -1,10 +1,10 @@
 // TODO: Edit your Global theme colors here
-$accent-color: #FF0000;
+$accent-color: #00011d;
 $accent-color-dark: #0000FF;
 
 $toolbar-color: #EEEEEE;
 $toolbar-color-dark: #232323;
-$background-color: #eeeeee;
+$background-color: white;
 $background-color-dark: #111216;
 $toolbar-text-color: $toolbar-color-dark;
 $toolbar-text-color-dark: $toolbar-color;
@@ -14,10 +14,21 @@ $card-background-dark: #494949;
 $card-border: #eee;
 $card-border-dark: #5c5c5c;
 
+$highlight-color: #3739471c;
+$highlight-color-dark: #424456e0;
+
+$quote-color: rgba(255, 255, 255, 0.679);
+$quote-color-dark: #19272869;
 $link-color: #1751f0de;
 $link-color-dark: #1eff00f8;
 $link-color-hover: #17a0f0de;
 $link-color-hover-dark: #1c9703;
+
+$article-text-dark-color: whitesmoke;
+$article-text-light-color: #232323;
+
+$footer-color-dark: linear-gradient(#111216, #494949);
+$footer-color: linear-gradient(rgba(245, 245, 245, 0.4), rgb(206, 206, 206) 68.49%, rgba(169, 169, 169, 0.62));
 
 $colors: (
   --accent-color: ($accent-color, $accent-color-dark),
@@ -28,6 +39,10 @@ $colors: (
   --card-text-color: ($toolbar-text-color, $toolbar-text-color-dark),
   --background-color: ($background-color, $background-color-dark),
   --link-color: ($link-color, $link-color-dark),
-  --link-color-hover: ($link-color-hover, $link-color-hover-dark)
+  --link-color-hover: ($link-color-hover, $link-color-hover-dark),
+  --theme-ui-colors-articleText: ($article-text-light-color, $article-text-dark-color),
+  --footer-color: ($footer-color, $footer-color-dark),
+  --highlight-color: ($highlight-color, $highlight-color-dark),
+  --quote-color: ($quote-color, $quote-color-dark)
 )
 

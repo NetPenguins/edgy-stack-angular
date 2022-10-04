@@ -4,6 +4,7 @@
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    flex-wrap: wrap;
     font-size: 18px;
     color: var(--theme-ui-colors-grey,#73737D);
 }

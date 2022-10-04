@@ -1,0 +1,14 @@
+<div *ngIf="!loading; else spinner" class="main-content">
+    <app-hero-header *ngIf="post" [post]="post"></app-hero-header>
+    <img
+        class="img-responsive rounded"
+        width="200"
+        src="{{ image }}"
+        alt=""
+    />
+    <app-hero-aside></app-hero-aside>
+    <div [innerHtml]="post.content" *ngIf="post && post.content"></div>
+</div>
+<ng-template #spinner>
+    <app-spinner></app-spinner>
+</ng-template>

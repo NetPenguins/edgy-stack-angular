@@ -1,26 +1,13 @@
 //TODO: Edit theme change transitions here
 .animate-colors-transition  {
-  // position: relative; 
-  // transform: scale(0);
-  // left: 0; 
-  // right: 0;
-  // top: 0;
-  // bottom: 0;
-  // width: 100%;
-  // height: 100%;
-  // border-radius: 50%;
-  // transition: 1000ms ease-in-out;
-  // display: flex;
-  // flex: 0 0 auto;
   &.theme-light{
     transition: 500ms ease-in-out;
-    color: red;
+    color: rgb(0, 8, 31);
   }
   &.theme-dark{
     animation:backwards 500ms ease-in-out;
     transition: 500ms ease-in;
   }
-  //transition: color 50ms, background 100ms;
 }
 
 //Spinner

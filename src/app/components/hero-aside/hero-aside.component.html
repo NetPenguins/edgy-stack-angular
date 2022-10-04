@@ -1,8 +1,7 @@
 <aside class="container">
-    <div id="scroll-container" (window:scroll)="onWindowScroll($event)"></div>
-    <!-- <div id="scroll-container1" (scroll)="onContainerScroll($event)"></div> -->
+    <div id="scroll-container"></div>
     <div class="align" 
-    [style.visibility]="scrollY ? 'visible' : 'hidden'"
+    [style.visibility]="show ? 'visible' : 'hidden'"
     >
         <div class="progress-container">
             <div class="track-line">

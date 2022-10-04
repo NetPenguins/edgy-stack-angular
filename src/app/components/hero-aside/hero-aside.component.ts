@@ -10,26 +10,24 @@ export class HeroAsideComponent implements OnInit {
   @Input() contentHeight;
   imageOffset: number;
   shouldFixAside: boolean;
-  show: boolean;
+  show: boolean = false;
   progressRef: number;
   scrollY: number;
   
-  // @HostListener('window:scroll') onScroll(e: Event): void {
-  //   console.log(e)
-  //   this.scrollY = (e.target as Element).scrollTop;
-  //   console.log(scrollY)
-  // }
-
-  onWindowScroll(event: Event) {
+  @HostListener('window:scroll') onScroll(e: Event): void {
     let elm = document.body
     var p = elm.parentElement
     this.scrollY =  Math.round((elm.scrollTop || p.scrollTop) / (p.scrollHeight - p.clientHeight ) * 100)
-    console.log(this.scrollY)
+    
+    if (!this.show && this.scrollY > 5 && this.scrollY < 95) {
+      this.show = true;
+    } else if (this.scrollY > 95 || this.scrollY < 5) {
+      this.show = false;
+    }
   }
-  constructor() { }
 
-  ngOnInit(): void {
+  constructor() {}
 
-  }
+  ngOnInit(): void {}
 }
 

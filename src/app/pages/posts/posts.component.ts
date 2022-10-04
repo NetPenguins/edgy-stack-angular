@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Post } from 'src/app/models/post.model';
-import { PostsService } from 'src/app/services/posts.service';
 import { Subscription } from 'rxjs';
 import { Apollo } from 'apollo-angular';
 import { GET_POSTS } from '../../services/queries'
